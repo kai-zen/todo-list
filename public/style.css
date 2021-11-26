@@ -1,0 +1,188 @@
+* {
+    font-family: 'Varela Round', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    width: 100%;
+    background: linear-gradient(to bottom, #68eacc 0%, #497be8 100%);
+    overflow: hidden;
+}
+
+.wrapper {
+    margin: 120px auto;
+    max-width: 400px;
+    width: 100%;
+    background: #fff;
+    border-radius: 5px;
+    padding: 25px;
+}
+
+.wrapper header {
+    font-size: 30px;
+    font-weight: 600;
+}
+
+.wrapper .inputField {
+    display: flex;
+    height: 45px;
+    width: 100%;
+    margin: 20px 0;
+}
+
+.inputField input {
+    width: 85%;
+    height: 100%;
+    border: 1px solid #ccc;
+    font-size: 17px;
+    border-radius: 3px;
+    padding-left: 15px;
+    outline: none;
+}
+
+.inputField button {
+    width: 60px;
+    height: 100%;
+    border: none;
+    background: #8e49e8;
+    color: #fff;
+    font-size: 22px;
+    border-radius: 3px;
+    margin-left: 5px;
+    outline: none;
+}
+
+.wrapper .todoList {
+    max-height: 250px;
+    overflow-y: auto;
+}
+
+.todoList li {
+    list-style: none;
+    height: 45px;
+    line-height: 45px;
+    position: relative;
+    background: #f2f2f2;
+    border-radius: 3px;
+    margin-bottom: 8px;
+    padding: 0 15px;
+    overflow: hidden;
+}
+
+.todoList li.active {
+    background-color: lightgreen;
+    color: green;
+}
+
+.todoList li span {
+    position: absolute;
+    right: -45px;
+    color: #fff;
+    width: 45px;
+    text-align: center;
+    border-radius: 0 3px 3px 0;
+    background: #e74c3c;
+    cursor: pointer;
+    transition: .4s;
+}
+
+.todoList li span:first-child {
+    right: 0;
+    color: green;
+    background-color: transparent;
+}
+
+.todoList li:hover span {
+    right: 0;
+}
+
+.todoList li:hover span:first-child {
+    right: 45px;
+    border-radius: 0;
+}
+
+.wrapper .footer {
+    display: flex;
+    width: 100%;
+    margin-top: 20px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer button {
+    border: none;
+    outline: none;
+    background: #8e49e8;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 3px;
+    padding: 6px 10px;
+}
+
+.noTasks {
+    background: #f2f2f2;
+    color: #595959;
+    padding: 10px;
+}
+
+.noTasks h2 {
+    margin-bottom: 5px;
+}
+
+.firstPage {
+    margin: 20px 0;
+}
+
+.fa-edit {
+    color: goldenrod;
+}
+
+.updateModal {
+    background-color: #ccc;
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    height: 170px;
+    position: relative;
+    justify-content: space-between;
+    padding: 25px;
+    border-radius: 5px;
+    margin-left: calc(50% - 150px);
+    top: -240px;
+}
+
+.updateModal button {
+    width: 60px;
+    border: none;
+    background: #8e49e8;
+    color: #fff;
+    font-size: 16px;
+    border-radius: 3px;
+    margin-left: 5px;
+    outline: none;
+    padding: 6px 10px;
+}
+
+.updateModal input {
+    border: 1px solid #ccc;
+    height: 24px;
+    font-size: 17px;
+    border-radius: 3px;
+    padding-left: 15px;
+    outline: none;
+}
+
+.closeIcon {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 22px;
+}
+
+.closeIcon:hover {
+    color: red;
+}
