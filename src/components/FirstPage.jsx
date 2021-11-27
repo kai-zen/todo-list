@@ -2,11 +2,15 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import Tasks from './Tasks';
 import Remained from './Remained';
+import { useSelector } from 'react-redux';
+import { selectTasksList } from '../redux/todoSlice';
 
-const FirstPage = ({tasksList, handleDeleteTask, setDoneTasks, doneTasks, handleEditTask}) => {
+const FirstPage = ({setDoneTasks, doneTasks}) => {
+    const tasksList = useSelector(selectTasksList);
+
     return ( 
         <div className='firstPage'>
-            <Tasks tasksList={tasksList} inFirstPage={true} handleDeleteTask={handleDeleteTask} setDoneTasks={setDoneTasks} doneTasks={doneTasks} handleEditTask={handleEditTask}/> 
+            <Tasks inFirstPage={true} setDoneTasks={setDoneTasks} doneTasks={doneTasks}/> 
             <div className="footer">
                 <Remained length={tasksList.length} />
                 <Link to='/edit-tasks'><button>Edit tasks</button></Link>

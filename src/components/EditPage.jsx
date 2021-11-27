@@ -2,12 +2,14 @@ import React, {Fragment} from 'react';
 import AddInput from './AddInput';
 import Tasks from './Tasks';
 import { Link } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 
-const EditPage = ({tasksList, handleDeleteTask, handleAddTask, setDoneTasks, doneTasks, handleEditTask}) => {
+const EditPage = ({setDoneTasks, doneTasks}) => {
+    const tasksList = useSelector(state => state.tasksList)
     return (
         <Fragment>
-            <AddInput handleAddTask={handleAddTask}/>
-            <Tasks tasksList={tasksList} inFirstPage={false} handleDeleteTask={handleDeleteTask} setDoneTasks={setDoneTasks} doneTasks={doneTasks} handleEditTask={handleEditTask}/>
+            <AddInput/>
+            <Tasks tasksList={tasksList} inFirstPage={false} setDoneTasks={setDoneTasks} doneTasks={doneTasks}/>
             <div className="footer">
                 <Link to='/'><button>Done editing!</button></Link>
             </div>
